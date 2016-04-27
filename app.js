@@ -26,14 +26,3 @@ app.use(function(req,res,next) {
 })
 
 app.use('/', routes(io));
-
-io.on('new_tweet', function(call){
-  // Create an element for each piece of data in the phone call object.
-  console.log("Reached IO process: ");
-  console.log("Reached objetc: ",call);
-  var newTweet = document.createElement('li');
-  newTweet.textContent = "David"+call.name+call.text;
- 
-  // Append the new object to the #phone-calls div.
-  document.getElementById('TweetLog').appendChild(newTweet);
-});

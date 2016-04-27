@@ -91,9 +91,15 @@
     });
     // When 'new_tweet' events are fired, do something with the packaged tweet
     socket.on('new_tweet', function (tweet) { 
-      console.log(tweet);
-      alert('Refreshing... check the console...');
-      // some logic to add the new tweet to the DOM…
+  
+      var tweetWrap = document.createElement('li');
+      var tweetBr = document.createElement('br');
+      var tweetDash = document.getElementById('TweetLog');
+      var tweetUpdate= ('<li><a href="/users/' + tweet.name + '">' + tweet.name + '</a> - '+ tweet.text + '</a></li>');
+      tweetWrap.innerHTML=tweetUpdate;
+      console.log("tweet text: ",tweetWrap);
+      tweetDash.insertBefore(tweetBr,tweetDash.childNodes[0]);
+      tweetDash.insertBefore(tweetWrap,tweetDash.childNodes[0]);
     }); 
   </script>
   

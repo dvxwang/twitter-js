@@ -27,12 +27,13 @@
       <br>
        
       <!-- display tweets here -->
+      
+      <ul id="TweetLog">
       {% for tweet in tweets %}
-      <div id="TweetLog">
         <li><a href="/users/{{tweet.name}}">{{tweet.name}}</a>- {{tweet.text}}</li>
         <br>
       {% endfor %}
-      </div>
+      </ul>
       
     </div>
   </div>

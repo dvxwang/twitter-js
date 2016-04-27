@@ -14,6 +14,7 @@ module.exports = function(io) {
     var text = req.body.text;
     tweetBank.add(name,text);
     io.emit('new_tweet', {name: name, text:text});
+    console.log("Reached IO processInit");
     res.redirect("/");
   });
 
